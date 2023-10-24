@@ -10,7 +10,7 @@ const con = mysql.createConnection({
 con.connect()
 const app = express()
 const port = 8080
-
+app.use(express.json());
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -25,14 +25,13 @@ app.post('/login', (req, res) => {
 
         if (result.length == 1) {
             console.log("good");
-            res.status(200);
+            res.status(200).json({user: req.body.Username});
         } else {
             console.log("bad");
-            res.status(401);
+            res.status(401).send("Invalid Credentials");
         }
 
     })
-    res.status();
 })
 
 app.post('/register', (req, res) => {
@@ -43,7 +42,7 @@ app.post('/register', (req, res) => {
     con.query(sql, function (err, result) {
         if (err) throw (err)
         console.log("user created");
-        res.status(201);
+        res.status(201).json({user: req.body.Username});
     });
 })
 

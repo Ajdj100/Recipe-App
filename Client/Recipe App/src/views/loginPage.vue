@@ -56,8 +56,6 @@ export default {
     },
     methods: {
         signupMethod() {
-            console.log(this.SignUpUsername + this.SignUpPassword)
-            //todo: make API call
             const request = {
                 method: 'post',
                 headers: { 'Content-Type': 'application/json' },
@@ -67,7 +65,7 @@ export default {
                 .then(response => {
                     if (response.status === 200) {
                         response.json().then((data) => {
-                            localStorage.setItem("user", data.token);
+                            localStorage.setItem("user", data.user);
                         });
                         this.$router.push('/')
                     } else {
@@ -88,7 +86,7 @@ export default {
                 .then(response => {
                     if (response.status === 200) {
                         response.json().then((data) => {
-                            localStorage.setItem("user", data.token);
+                            localStorage.setItem("user", data.user);
                         });
                         this.$router.push('/')
                     } else {
