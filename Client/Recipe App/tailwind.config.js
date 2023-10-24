@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     "./index.html",
@@ -6,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['"Assistant"', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         'green-light': '#F4FFF4;',
         'green-mid': '#BCECD5;',
@@ -20,4 +25,3 @@ module.exports = {
   },
   plugins: [],
 }
-
