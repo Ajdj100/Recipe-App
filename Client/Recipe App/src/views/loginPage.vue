@@ -57,6 +57,9 @@ export default {
             //todo: make API call
             console.log("login");
 
+        },
+        signup() {
+            
         }
     }
 }
