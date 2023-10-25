@@ -2,7 +2,7 @@
     <div class="bg-green-light h-screen overflow-clip">
         <navbar></navbar>
         <!-- content -->
-        <div class="h-full bg-inherit">
+        <div class="h-full bg-inherit px-[126px]">
             <RouterView />
         </div>
     </div>

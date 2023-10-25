@@ -1,6 +1,6 @@
 <template>
     <div class="w-screen h-20 drop-shadow-lg bg-inherit flex items-center justify-between px-[126px]">
-        <p class="mr-14">logo</p>
+        <p class="mx-14">logo</p>
         <div class="flex justify-around w-full">
             <a>Trending</a>
             <a>Recipes</a>
